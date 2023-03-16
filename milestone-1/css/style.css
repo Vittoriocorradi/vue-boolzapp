@@ -20,7 +20,7 @@ TYPO
 --------
 */
 
-.contacts-container .profile i {
+header i {
     color: #b1b1b1;
 }
 
@@ -40,6 +40,17 @@ COMMON
 
 .align-items-center {
     align-items: center;
+}
+
+header img {
+    width: 2.375rem;
+    height: 2.375rem;
+    border-radius: 50%;
+    display: block;
+}
+
+header i {
+    margin-right: .9375rem;
 }
 
 /*
@@ -88,16 +99,7 @@ CONTENITORE CONTATTI
 }
 
 .contacts-container .profile img {
-    width: 2.375rem;
-    height: 2.375rem;
-    border-radius: 50%;
-    position: relative;
-    top: .125rem;
     margin-right: .1875rem;
-}
-
-.contacts-container .profile i {
-    margin-right: .9375rem;
 }
 
 /* Allerta notifiche */
@@ -184,6 +186,11 @@ CONTENITORE CHAT
 
 .chat-container .contact-info {
     background-color: #eaeaea;
+    padding: .5rem;
+}
+
+.chat-container .contact-info img {
+    margin-right: .625rem;
 }
 
 /* Chat */
