@@ -23,7 +23,7 @@ BODY
 body {
     height: 100vh;
     background: linear-gradient(to bottom,#009688 15%, #8fbfb3 15%, #8fbfb3 15.5%, #dddbd1 15.5%, #d2dbdc);
-    padding: 1.25rem 0 .625rem;
+    padding: 2.5rem 0 1.875rem;
 }
 
 .big-container {
@@ -31,4 +31,90 @@ body {
     max-width: 71.25rem;
     height: 100%;
     margin: 0 auto;
+    display: flex;
+}
+
+/*
+--------
+CONTENITORE CONTATTI
+--------
+*/
+
+.contacts-container {
+    width: 25rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.contacts-container .profile,
+.contacts-container .alert-notifications,
+.contacts-container .search-bar {
+    flex-shrink: 0;
+}
+
+/* Profilo */
+
+.contacts-container .profile {
+    background-color: #eaeaea;
+    height: 3.125rem;
+    border-right: .1250rem solid #e6e6e6;
+}
+
+/* Allerta notifiche */
+
+.contacts-container .alert-notifications {
+    background-color: #8edafc;
+    height: 3.75rem;
+}
+
+/* Ricerca contatti */
+
+.contacts-container .search-bar {
+    background-color: #fafafa;
+    height: 2.375rem;
+}
+
+/* Contatti */
+
+.contacts-container .contacts {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+/*
+--------
+CONTENITORE CHAT
+--------
+*/
+
+.chat-container {
+    width: 46.25rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-container .contact-info,
+.chat-container .new-message {
+    height: 3.125rem;
+    flex-shrink: 0;
+}
+
+/* Info contatto */
+
+.chat-container .contact-info {
+    background-color: #eaeaea;
+}
+
+/* Chat */
+
+.chat-container .chat {
+    flex-grow: 1;
+    overflow-y: auto;
+    background-image: url(../img/mine.jpg);
+}
+
+/* Nuovo messaggio */
+
+.chat-container .new-message {
+    background-color: #f3eeea;
 }
