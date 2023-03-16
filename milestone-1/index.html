@@ -8,6 +8,11 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <!-- /Font Awesome -->
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- /Google Font -->
 
     <title>Boolzapp</title>
     <!-- Style -->
@@ -27,7 +32,7 @@
                     <div>
                         <img src="img/avatar_4.jpg" alt="Mia foto profilo">
                     </div>
-                    <div class="personal-name">
+                    <div class="personal-name bold">
                         Vittorio
                     </div>
                 </div>
@@ -44,7 +49,7 @@
                     <i class="fa-solid fa-bell-slash"></i>
                 </div>
                 <div>
-                    <div>Ricevi notifiche di nuovi messaggi</div>
+                    <div class="bold">Ricevi notifiche di nuovi messaggi</div>
                     <div><a href="#">Attiva notifiche desktop</a></div>
                 </div>
             </div>
@@ -52,8 +57,8 @@
             <!-- Ricerca contatti -->
             <div class="search-bar-container flex align-items-center">
                 <div class="search-bar flex">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    <label for="search-chats"><i class="fa-solid fa-magnifying-glass"></i></label>
+                    <input type="text" id="search-chats" placeholder="Cerca o inizia una nuova chat">
                 </div>
             </div>
             <!-- /Ricerca contatti -->
@@ -65,11 +70,15 @@
                             <img src="img/avatar_4.jpg" alt="avatar">
                         </div>
                         <div class="contact-name">
-                            <div>name</div>
-                            <div>last seen</div>
+                            <div class="bold">
+                                Nome
+                            </div>
+                            <div class="small-text">
+                                Ultimo messaggio inviato
+                            </div>
                         </div>
                     </div>
-                    <div class="time">
+                    <div class="time typo-time">
                         12:00
                     </div>
                 </li>
@@ -89,11 +98,11 @@
                         <img src="img/avatar_4.jpg" alt="foto profilo contatto">
                     </div>
                     <div class="chat-contact-name">
-                        <div>
-                            contatto
+                        <div class="bold">
+                            Contatto
                         </div>
-                        <div>
-                            ultimo accesso
+                        <div class="small-text">
+                            Ultimo accesso alle 12:00
                         </div>
                     </div>
                 </div>
@@ -108,15 +117,15 @@
             <main class="chat flex">
                 <div class="msg sent flex justify-content-between">
                     <div class="msg-text">Hai portato a spasso il cane?</div>
-                    <div class="msg-time">12:00</div>
+                    <div class="msg-time typo-time">12:00</div>
                 </div>
                 <div class="msg sent flex justify-content-between">
                     <div class="msg-text">Ricordati di stendere i panni</div>
-                    <div class="msg-time">12:00</div>
+                    <div class="msg-time typo-time">12:00</div>
                 </div>
                 <div class="msg received flex justify-content-between">
                     <div class="msg-text">Tutto fatto!</div>
-                    <div class="msg-time">12:00</div>
+                    <div class="msg-time typo-time">12:00</div>
                 </div>
                 <!-- <div class="msg sent">Hai portato a spasso il cane?</div>
                 <div class="msg sent">Ricordati di stendere i panni</div>

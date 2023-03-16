@@ -22,10 +22,35 @@ TYPO
 
 body {
     font-size: .875rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.alert-notifications a {
+    font-size: .75rem;
+    color: #6d9eb8;
+}
+
+.small-text {
+    color: #b3b5b8;
+    font-size: .75rem;
+}
+
+.typo-time {
+    color: #c3c5c8;
+    font-size: .5625rem
+}
+
+.bold {
+    font-weight: 500;
 }
 
 header i {
     color: #b1b1b1;
+}
+
+.search-bar i {
+    color: #838383;
+    font-size: .75rem;
 }
 
 footer i {
@@ -151,6 +176,7 @@ CONTENITORE CONTATTI
     flex-grow: 1;
     border: none;
     height: 100%;
+    padding: 0 .3125rem;
 }
 
 /* Contatti */
@@ -161,8 +187,12 @@ CONTENITORE CONTATTI
 }
 
 .contacts-container .contacts .contact {
-    padding: .1875rem .75rem;
+    padding: .4375rem .75rem;
     border-bottom: .0625rem solid #eafaea;
+}
+
+.contacts-container .contacts .contact:first-child {
+    background-color: #e9ebeb;
 }
 
 .contacts-container .contacts .contact img {
@@ -171,6 +201,7 @@ CONTENITORE CONTATTI
     border-radius: 50%;
     display: block;
     padding: .3125rem;
+    margin-right: .3125rem;
 }
 
 /*
@@ -220,7 +251,7 @@ CONTENITORE CHAT
 }
 
 .chat-container .chat .msg .msg-text {
-    padding: .625rem;
+    padding: .625rem .375rem;
 }
 
 .chat-container .chat .msg .msg-time {
@@ -253,4 +284,14 @@ CONTENITORE CHAT
     border: none;
     border-radius: .3125rem;
     padding: 0 .5rem;
+}
+
+/*
+--------
+EFFETTI
+--------
+*/
+
+input:focus {
+    outline: none;
 }
