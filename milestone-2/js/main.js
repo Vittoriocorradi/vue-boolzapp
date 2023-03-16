@@ -173,6 +173,11 @@ createApp({
     methods: {
         activeContact(index) {
             this.activeConversation = index;
+        },
+        getTime(index) {
+           const time = this.contacts[this.activeConversation].messages[index].date.split(' ');
+           const hours = time[1].split(':');
+           return `${hours[0]}:${hours[1]}`;
         }
     }
 }).mount('#app');

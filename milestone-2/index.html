@@ -119,9 +119,9 @@
             <!-- /Info contatto -->
             <!-- Chat -->
             <main class="chat flex">
-                <div v-for="text in contacts[activeConversation].messages" class="msg flex justify-content-between" :class="{received: text.status === 'received', sent: text.status === 'sent'}">
+                <div v-for="(text, index) in contacts[activeConversation].messages" class="msg flex justify-content-between" :class="{received: text.status === 'received', sent: text.status === 'sent'}">
                     <div class="msg-text">{{ text.message }}</div>
-                    <div class="msg-time typo-time">12:00</div>
+                    <div class="msg-time typo-time">{{ getTime(index) }}</div>
                 </div>
             </main>
             <!-- /Chat -->
