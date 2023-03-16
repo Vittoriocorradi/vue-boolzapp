@@ -105,6 +105,18 @@ CONTENITORE CONTATTI
 .contacts-container .alert-notifications {
     background-color: #8edafc;
     height: 3.75rem;
+    padding: .875rem;
+}
+
+.contacts-container .alert-notifications i {
+    height: 2.375rem;
+    width: 2.375rem;
+    background-color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 2.375rem;
+    color: #8edafc;
+    margin-right: .375rem;
 }
 
 /* Ricerca contatti */
