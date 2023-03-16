@@ -13,3 +13,22 @@ RESET
 [v-cloak] {
     display: none;
 }
+
+/*
+--------
+BODY
+--------
+*/
+
+body {
+    height: 100vh;
+    background: linear-gradient(to bottom,#009688 15%, #8fbfb3 15%, #8fbfb3 15.5%, #dddbd1 15.5%, #d2dbdc);
+    padding: 1.25rem 0 .625rem;
+}
+
+.big-container {
+    background-color: #fff;
+    max-width: 71.25rem;
+    height: 100%;
+    margin: 0 auto;
+}
