@@ -24,6 +24,10 @@ header i {
     color: #b1b1b1;
 }
 
+footer i {
+    color: #6c7476;
+}
+
 /*
 --------
 COMMON
@@ -205,4 +209,17 @@ CONTENITORE CHAT
 
 .chat-container .new-message {
     background-color: #f3eeea;
+    padding: .5625rem 0;
+}
+
+.chat-container .new-message i {
+    margin: 1.6875rem;
+}
+
+.chat-container .new-message input {
+    flex-grow: 1;
+    height: 100%;
+    border: none;
+    border-radius: .3125rem;
+    padding: 0 .5rem;
 }
