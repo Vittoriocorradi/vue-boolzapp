@@ -13,5 +13,6 @@ La lista dei contatti deve essere stampata sulla pagina usando i dati a disposiz
 
 # Milestone 2
 
+Creare una variabile di stato per segnare di quale contatto si stia vedendo la conversazione.
 Premendo su contatto diverso, compare il suo nome e la sua immagine di profilo.
 Nella chat compaiono i suoi messaggi.
