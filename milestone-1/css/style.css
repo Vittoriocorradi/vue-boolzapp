@@ -204,6 +204,10 @@ CONTENITORE CONTATTI
     margin-right: .3125rem;
 }
 
+.contacts-container .contacts .contact .contact-name {
+    padding-top: .1875rem;
+}
+
 /*
 --------
 CONTENITORE CHAT
@@ -238,7 +242,7 @@ CONTENITORE CHAT
     flex-direction: column;
     flex-grow: 1;
     overflow-y: auto;
-    background-image: url(../img/mine.jpg);
+    background-image: url(../../img/mine.jpg);
     padding: 2.375rem 4.75rem;
     align-items: start;
 }
