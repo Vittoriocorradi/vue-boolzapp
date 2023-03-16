@@ -121,9 +121,26 @@ CONTENITORE CONTATTI
 
 /* Ricerca contatti */
 
-.contacts-container .search-bar {
+.contacts-container .search-bar-container {
     background-color: #fafafa;
     height: 2.375rem;
+    padding: 0 .3125rem;
+}
+
+.contacts-container .search-bar-container .search-bar {
+    width: 100%;
+    background-color: #fff;
+    padding: .4375rem;
+}
+
+.contacts-container .search-bar-container .search-bar i {
+    padding: 0 .9375rem;
+}
+
+.contacts-container .search-bar-container .search-bar input {
+    flex-grow: 1;
+    border: none;
+    height: 100%;
 }
 
 /* Contatti */
@@ -131,6 +148,19 @@ CONTENITORE CONTATTI
 .contacts-container .contacts {
     flex-grow: 1;
     overflow-y: auto;
+}
+
+.contacts-container .contacts .contact {
+    padding: .1875rem .75rem;
+    border-bottom: .0625rem solid #eafaea;
+}
+
+.contacts-container .contacts .contact img {
+    width: 3.125rem;
+    height: 3.125rem;
+    border-radius: 50%;
+    display: block;
+    padding: .3125rem;
 }
 
 /*
