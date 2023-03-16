@@ -20,6 +20,10 @@ TYPO
 --------
 */
 
+body {
+    font-size: .875rem;
+}
+
 header i {
     color: #b1b1b1;
 }
@@ -200,9 +204,36 @@ CONTENITORE CHAT
 /* Chat */
 
 .chat-container .chat {
+    flex-direction: column;
     flex-grow: 1;
     overflow-y: auto;
     background-image: url(../img/mine.jpg);
+    padding: 2.375rem 4.75rem;
+    align-items: start;
+}
+
+.chat-container .chat .msg {
+    padding: .125rem .3125rem;
+    margin-bottom: .625rem;
+    width: 41%;
+    border-radius: .5rem;
+}
+
+.chat-container .chat .msg .msg-text {
+    padding: .625rem;
+}
+
+.chat-container .chat .msg .msg-time {
+    align-self: end;
+}
+
+.sent {
+    align-self: end;
+    background-color: #d5f9ba;
+}
+
+.received {
+    background-color: #fff;
 }
 
 /* Nuovo messaggio */
