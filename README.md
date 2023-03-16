@@ -10,3 +10,8 @@ I contatti e i messaggi saranno dinamici e ci sarà la possibilità di scrivere 
 
 Creare la grafica della pagina con HTML e CSS.
 La lista dei contatti deve essere stampata sulla pagina usando i dati a disposizione su JavaScript.
+
+# Milestone 2
+
+Premendo su contatto diverso, compare il suo nome e la sua immagine di profilo.
+Nella chat compaiono i suoi messaggi.

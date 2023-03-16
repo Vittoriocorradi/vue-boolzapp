@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <!-- /Font Awesome -->
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- /Google Font -->
+
+    <title>Boolzapp</title>
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Vue Container -->
+    <div id="app" class="big-container flex" v-cloak>
+
+        <!-- Container contatti -->
+        <div class="contacts-container flex">
+
+            <!-- Profilo -->
+            <header class="profile flex justify-content-between align-items-center">
+                <div class="my-info flex align-items-center">
+                    <div>
+                        <img src="../img/avatar_io.jpg" alt="Mia foto profilo">
+                    </div>
+                    <div class="personal-name bold">
+                        Vittorio
+                    </div>
+                </div>
+                <div class="my-info-options">
+                    <a href="#"><i class="fa-solid fa-circle-notch"></i></a>
+                    <a href="#"><i class="fa-solid fa-message"></i></a>
+                    <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                </div>
+            </header>
+            <!-- /Profilo -->
+            <!-- Allerta notifiche -->
+            <div class="alert-notifications flex align-items-center">
+                <div class="notification-bell">
+                    <i class="fa-solid fa-bell-slash"></i>
+                </div>
+                <div>
+                    <div class="bold">Ricevi notifiche di nuovi messaggi</div>
+                    <div><a href="#">Attiva notifiche desktop</a></div>
+                </div>
+            </div>
+            <!-- /Allerta notifiche -->
+            <!-- Ricerca contatti -->
+            <div class="search-bar-container flex align-items-center">
+                <div class="search-bar flex">
+                    <label for="search-chats"><i class="fa-solid fa-magnifying-glass"></i></label>
+                    <input type="text" id="search-chats" placeholder="Cerca o inizia una nuova chat">
+                </div>
+            </div>
+            <!-- /Ricerca contatti -->
+            <!-- Contatti -->
+            <ul class="contacts">
+                <li v-for="(contact, index) in contacts" class="contact flex justify-content-between">
+                    <div class="contact-info flex">
+                        <div class="contact-img">
+                            <img :src="contact.avatar" alt="avatar">
+                        </div>
+                        <div class="contact-name">
+                            <div class="bold">
+                                {{ contact.name }}
+                            </div>
+                            <div class="small-text">
+                                Ultimo messaggio inviato
+                            </div>
+                        </div>
+                    </div>
+                    <div class="time typo-time">
+                        12:00
+                    </div>
+                </li>
+            </ul>
+            <!-- /Contatti -->
+
+        </div>
+        <!-- /Container contatti -->
+
+        <!-- Container chat -->
+        <div class="chat-container flex">
+
+            <!-- Info contatto -->
+            <header class="contact-info justify-content-between flex align-items-center">
+                <div class="chat-contact-profile flex align-items-center">
+                    <div>
+                        <img src="../img/avatar_1.jpg" alt="foto profilo contatto">
+                    </div>
+                    <div class="chat-contact-name">
+                        <div class="bold">
+                            Contatto
+                        </div>
+                        <div class="small-text">
+                            Ultimo accesso alle 12:00
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-contact-options">
+                    <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                    <a href="#"><i class="fa-solid fa-paperclip"></i></a>
+                    <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                </div>
+            </header>
+            <!-- /Info contatto -->
+            <!-- Chat -->
+            <main class="chat flex">
+                <div class="msg sent flex justify-content-between">
+                    <div class="msg-text">Hai portato a spasso il cane?</div>
+                    <div class="msg-time typo-time">12:00</div>
+                </div>
+                <div class="msg sent flex justify-content-between">
+                    <div class="msg-text">Ricordati di stendere i panni</div>
+                    <div class="msg-time typo-time">12:00</div>
+                </div>
+                <div class="msg received flex justify-content-between">
+                    <div class="msg-text">Tutto fatto!</div>
+                    <div class="msg-time typo-time">12:00</div>
+                </div>
+                <!-- <div class="msg sent">Hai portato a spasso il cane?</div>
+                <div class="msg sent">Ricordati di stendere i panni</div>
+                <div class="msg received">Tutto fatto!</div> -->
+            </main>
+            <!-- /Chat -->
+            <!-- Nuovo messaggio -->
+            <footer class="new-message flex align-items-center">
+                <a href=""><i class="fa-regular fa-face-smile"></i></a>
+                <input type="text" placeholder="Scrivi un messaggio">
+                <a href=""><i class="fa-solid fa-microphone"></i></a>
+            </footer>
+            <!-- /Nuovo messaggio -->
+
+        </div>
+        <!-- /Container chat -->
+
+    </div>
+    <!-- /Vue Container -->
+
+    <!-- VueJS -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- My JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>
