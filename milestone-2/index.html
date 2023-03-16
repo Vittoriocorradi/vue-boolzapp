@@ -68,7 +68,7 @@
             <!-- /Ricerca contatti -->
             <!-- Contatti -->
             <ul class="contacts">
-                <li v-for="(contact, index) in contacts" class="contact flex justify-content-between">
+                <li v-for="(contact, index) in contacts" class="contact flex justify-content-between" :class="{'selected-contact': index === activeConversation}" @click="activeContact(index)">
                     <div class="contact-info flex">
                         <div class="contact-img">
                             <img :src="contact.avatar" alt="avatar">

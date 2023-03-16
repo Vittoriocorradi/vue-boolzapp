@@ -169,5 +169,10 @@ createApp({
             ]
             
         }
+    },
+    methods: {
+        activeContact(index) {
+            this.activeConversation = index;
+        }
     }
 }).mount('#app');

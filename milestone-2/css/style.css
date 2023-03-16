@@ -191,10 +191,6 @@ CONTENITORE CONTATTI
     border-bottom: .0625rem solid #eafaea;
 }
 
-.contacts-container .contacts .contact:first-child {
-    background-color: #e9ebeb;
-}
-
 .contacts-container .contacts .contact img {
     width: 3.125rem;
     height: 3.125rem;
@@ -288,6 +284,16 @@ CONTENITORE CHAT
     border: none;
     border-radius: .3125rem;
     padding: 0 .5rem;
+}
+
+/*
+--------
+CLASSI VUEJS
+--------
+*/
+
+.selected-contact {
+    background-color: #e9ebeb;
 }
 
 /*
