@@ -182,6 +182,7 @@ createApp({
            const hours = time[1].split(':');
            return `${hours[0]}:${hours[1]}`;
         },
+        // Nuovo messaggio
         newMessage() {
             if (this.newText.trim() !== '') {
                 this.contacts[this.activeConversation].messages.push({
@@ -193,6 +194,7 @@ createApp({
                 setTimeout(this.contactReply, 1000)
             }
         },
+        // Risposta dell'interlocutore
         contactReply() {
             this.contacts[this.activeConversation].messages.push({
                 date: '10/01/2020 17:35:00',
