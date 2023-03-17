@@ -4,6 +4,7 @@ createApp({
     data() {
         return{
             activeConversation: 0,       // Variabile di stato
+            newText: '',                 // Nuovo messaggio
             contacts: [                  // Lista contatti
                 {
                     name: 'Michele',
@@ -180,6 +181,16 @@ createApp({
            const time = this.contacts[this.activeConversation].messages[index].date.split(' ');
            const hours = time[1].split(':');
            return `${hours[0]}:${hours[1]}`;
+        },
+        newMessage() {
+            if (this.newText.trim() !== '') {
+                this.contacts[this.activeConversation].messages.push({
+                    date: '10/01/2020 17:34:00',
+                    message: this.newText,
+                    status: 'sent'
+                })
+                this.newText = '';
+            }
         }
     }
 }).mount('#app');
