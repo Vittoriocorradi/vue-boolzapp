@@ -190,7 +190,15 @@ createApp({
                     status: 'sent'
                 })
                 this.newText = '';
+                setTimeout(this.contactReply, 1000)
             }
+        },
+        contactReply() {
+            this.contacts[this.activeConversation].messages.push({
+                date: '10/01/2020 17:35:00',
+                message: 'Ok!',
+                status: 'received'
+            })
         }
     }
 }).mount('#app');
