@@ -99,11 +99,11 @@
             <header class="contact-info justify-content-between flex align-items-center">
                 <div class="chat-contact-profile flex align-items-center">
                     <div class="small-img">
-                        <img :src="contacts[activeConversation].avatar" alt="foto profilo contatto">
+                        <img :src="filteredList()[activeConversation].avatar" alt="foto profilo contatto">
                     </div>
                     <div class="chat-contact-name">
                         <div>
-                            {{ contacts[activeConversation].name }}
+                            {{ filteredList()[activeConversation].name }}
                         </div>
                         <div class="small-text">
                             Ultimo accesso alle 12:00
@@ -119,7 +119,7 @@
             <!-- /Info contatto -->
             <!-- Chat -->
             <main class="chat flex">
-                <div v-for="(text, index) in contacts[activeConversation].messages" class="msg flex justify-content-between" :class="{received: text.status === 'received', sent: text.status === 'sent'}">
+                <div v-for="(text, index) in filteredList()[activeConversation].messages" class="msg flex justify-content-between" :class="{received: text.status === 'received', sent: text.status === 'sent'}">
                     <div class="msg-text">{{ text.message }}</div>
                     <div class="msg-time typo-time">{{ getTime(index) }}</div>
                 </div>

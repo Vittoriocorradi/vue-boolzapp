@@ -176,19 +176,17 @@ createApp({
         // Rendi la conversazione attiva al click
         activeContact(index) {
             this.activeConversation = index;
-            // this.activeMessages = this.activeConversation;
-            // console.log(this.contacts[this.activeConversation].conversationIndex);
         },
         // Metodo per formattazione ora
         getTime(index) {
-            const time = this.contacts[this.activeConversation].messages[index].date.split(' ');
+            const time = this.filteredList()[this.activeConversation].messages[index].date.split(' ');
             const hours = time[1].split(':');
             return `${hours[0]}:${hours[1]}`;
         },
         // Nuovo messaggio
         newMessage() {
             if (this.newText.trim() !== '') {
-                this.contacts[this.activeConversation].messages.push({
+                this.filteredList()[this.activeConversation].messages.push({
                     date: '10/01/2020 17:34:00',
                     message: this.newText,
                     status: 'sent'
@@ -199,19 +197,18 @@ createApp({
         },
         // Risposta dell'interlocutore
         contactReply() {
-            this.contacts[this.activeConversation].messages.push({
+            this.filteredList()[this.activeConversation].messages.push({
                 date: '10/01/2020 17:35:00',
                 message: 'Ok!',
                 status: 'received'
             })
         },
+        // Lista filtrata dalla barra di ricerca
         filteredList() {
             if (this.searchKeys !== '') {
-                // const indexContacts = this.contacts.map((element, index) => ({ element, index }));
-                // console.log(indexContacts);
-                const filteredContacts = this.contacts.filter((element, index) => element.name.toLowerCase().includes(this.searchKeys.toLowerCase()));
-                // console.log(filteredContacts);
-                return filteredContacts;
+                this.activeConversation = 0;
+                console.log(this.activeConversation);
+                return this.contacts.filter(element => element.name.toLowerCase().includes(this.searchKeys.toLowerCase()));
             } else {
                 return this.contacts;
             }
