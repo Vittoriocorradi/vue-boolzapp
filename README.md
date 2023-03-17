@@ -16,3 +16,8 @@ La lista dei contatti deve essere stampata sulla pagina usando i dati a disposiz
 Creare una variabile di stato per segnare di quale contatto si stia vedendo la conversazione.
 Premendo su contatto diverso, compare il suo nome e la sua immagine di profilo.
 Nella chat compaiono i suoi messaggi.
+
+# Milestone 3
+
+Digitando nel campo scrivi un nuovo messaggio, il testo verrà salvato in un dato. Al premero di invio, il messaggio viene inserito in un oggetto e poi incluso nella lista dei messaggi.
+Un secondo dopo l'invio del messaggio, comparirà un messaggio da parte dell'interlocutore che avrà per testo "ok".
