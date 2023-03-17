@@ -3,8 +3,8 @@ const { createApp } = Vue;
 createApp({
     data() {
         return{
-            activeConversation: 0,
-            contacts: [
+            activeConversation: 0,       // Variabile di stato
+            contacts: [                  // Lista contatti
                 {
                     name: 'Michele',
                     avatar: '../img/avatar_1.jpg',
@@ -171,9 +171,11 @@ createApp({
         }
     },
     methods: {
+        // Rendi la conversazione attiva al click
         activeContact(index) {
             this.activeConversation = index;
         },
+        // Metodo per formattazione ora
         getTime(index) {
            const time = this.contacts[this.activeConversation].messages[index].date.split(' ');
            const hours = time[1].split(':');
