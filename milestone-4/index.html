@@ -62,13 +62,13 @@
             <div class="search-bar-container">
                 <div class="search-bar flex align-items-center">
                     <label for="search-chats" class="flex align-items-center"><i class="fa-solid fa-magnifying-glass"></i></label>
-                    <input type="text" id="search-chats" placeholder="Cerca o inizia una nuova chat">
+                    <input v-model="searchKeys" @keyup="filteredList" type="text" id="search-chats" placeholder="Cerca o inizia una nuova chat">
                 </div>
             </div>
             <!-- /Ricerca contatti -->
             <!-- Contatti -->
             <ul class="contacts">
-                <li v-for="(contact, index) in contacts" class="contact flex justify-content-between" :class="{'selected-contact': index === activeConversation}" @click="activeContact(index)">
+                <li v-for="(contact, index) in filteredList()" class="contact flex justify-content-between" :class="{'selected-contact': index === activeConversation}" @click="activeContact(index)">
                     <div class="contact-info flex">
                         <div class="contact-img">
                             <img :src="contact.avatar" alt="avatar">

@@ -2,9 +2,10 @@ const { createApp } = Vue;
 
 createApp({
     data() {
-        return{
+        return {
             activeConversation: 0,       // Variabile di stato
             newText: '',                 // Nuovo messaggio
+            searchKeys: '',              // Testo barra di ricerca contatti
             contacts: [                  // Lista contatti
                 {
                     name: 'Michele',
@@ -168,19 +169,21 @@ createApp({
                     ],
                 }
             ]
-            
+
         }
     },
     methods: {
         // Rendi la conversazione attiva al click
         activeContact(index) {
             this.activeConversation = index;
+            // this.activeMessages = this.activeConversation;
+            // console.log(this.contacts[this.activeConversation].conversationIndex);
         },
         // Metodo per formattazione ora
         getTime(index) {
-           const time = this.contacts[this.activeConversation].messages[index].date.split(' ');
-           const hours = time[1].split(':');
-           return `${hours[0]}:${hours[1]}`;
+            const time = this.contacts[this.activeConversation].messages[index].date.split(' ');
+            const hours = time[1].split(':');
+            return `${hours[0]}:${hours[1]}`;
         },
         // Nuovo messaggio
         newMessage() {
@@ -201,6 +204,17 @@ createApp({
                 message: 'Ok!',
                 status: 'received'
             })
+        },
+        filteredList() {
+            if (this.searchKeys !== '') {
+                // const indexContacts = this.contacts.map((element, index) => ({ element, index }));
+                // console.log(indexContacts);
+                const filteredContacts = this.contacts.filter((element, index) => element.name.toLowerCase().includes(this.searchKeys.toLowerCase()));
+                // console.log(filteredContacts);
+                return filteredContacts;
+            } else {
+                return this.contacts;
+            }
         }
     }
 }).mount('#app');
