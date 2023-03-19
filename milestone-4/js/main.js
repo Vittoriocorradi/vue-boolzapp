@@ -4,6 +4,7 @@ createApp({
     data() {
         return {
             activeConversation: 0,       // Variabile di stato
+            isSearched: false,
             newText: '',                 // Nuovo messaggio
             searchKeys: '',              // Testo barra di ricerca contatti
             contacts: [                  // Lista contatti
@@ -176,6 +177,9 @@ createApp({
         // Rendi la conversazione attiva al click
         activeContact(index) {
             this.activeConversation = index;
+            this.isSearched = false;
+            console.log(this.isSearched);
+            console.log('ciao');
         },
         // Metodo per formattazione ora
         getTime(index) {
@@ -206,9 +210,16 @@ createApp({
         // Lista filtrata dalla barra di ricerca
         filteredList() {
             if (this.searchKeys !== '') {
-                this.activeConversation = 0;
-                console.log(this.activeConversation);
-                return this.contacts.filter(element => element.name.toLowerCase().includes(this.searchKeys.toLowerCase()));
+                // if (this.isSearched === false) {
+                    // this.isSearched = true;
+                    // console.log(this.isSearched);
+                    // console.log('basta');
+                    // }
+                    const renderedList = this.contacts.filter(element => element.name.toLowerCase().includes(this.searchKeys.toLowerCase()));
+                    if (this.activeConversation > renderedList.length) {
+                        this.activeConversation = 0;
+                    }
+                    return renderedList;
             } else {
                 return this.contacts;
             }
