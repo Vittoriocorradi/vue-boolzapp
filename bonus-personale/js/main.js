@@ -254,11 +254,14 @@ createApp({
                     status: 'sent'
                 })
                 this.newText = '';
+                // Cambia l'orario dei nuovi messaggi
                 this.timeChange();
+                // Sposta il contatto in cima alla lista dei contatti
                 this.contacts.splice(0, 0, this.contacts[this.activeConversation]);
                 this.contacts.splice(this.activeConversation + 1, 1);
                 this.activeConversation = 0;
                 setTimeout(this.contactReply, 1000)
+                // Scrolla in fondo alla chat quando ci sono nuovi messaggi
                 this.$nextTick(() => {
                     this.$refs.chatWindow.scrollTop = this.$refs.chatWindow.scrollHeight
                 })
@@ -271,7 +274,9 @@ createApp({
                 message: this.randomReplies[this.getRndInteger(0, this.randomReplies.length - 1)],
                 status: 'received'
             })
+            // Cambia l'orario dei nuovi messaggi
             this.timeChange();
+            // Scrolla in fondo alla chat quando ci sono nuovi messaggi
             this.$nextTick(() => {
                 this.$refs.chatWindow.scrollTop = this.$refs.chatWindow.scrollHeight
             })
