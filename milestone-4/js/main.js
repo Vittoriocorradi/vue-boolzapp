@@ -4,7 +4,6 @@ createApp({
     data() {
         return {
             activeConversation: 0,       // Variabile di stato
-            isSearched: false,
             newText: '',                 // Nuovo messaggio
             searchKeys: '',              // Testo barra di ricerca contatti
             contacts: [                  // Lista contatti
@@ -177,20 +176,17 @@ createApp({
         // Rendi la conversazione attiva al click
         activeContact(index) {
             this.activeConversation = index;
-            this.isSearched = false;
-            console.log(this.isSearched);
-            console.log('ciao');
         },
         // Metodo per formattazione ora
         getTime(index) {
-            const time = this.filteredList()[this.activeConversation].messages[index].date.split(' ');
+            const time = this.contacts[this.activeConversation].messages[index].date.split(' ');
             const hours = time[1].split(':');
             return `${hours[0]}:${hours[1]}`;
         },
         // Nuovo messaggio
         newMessage() {
             if (this.newText.trim() !== '') {
-                this.filteredList()[this.activeConversation].messages.push({
+                this.contacts[this.activeConversation].messages.push({
                     date: '10/01/2020 17:34:00',
                     message: this.newText,
                     status: 'sent'
@@ -201,28 +197,32 @@ createApp({
         },
         // Risposta dell'interlocutore
         contactReply() {
-            this.filteredList()[this.activeConversation].messages.push({
+            this.contacts[this.activeConversation].messages.push({
                 date: '10/01/2020 17:35:00',
                 message: 'Ok!',
                 status: 'received'
             })
         },
         // Lista filtrata dalla barra di ricerca
-        filteredList() {
-            if (this.searchKeys !== '') {
-                // if (this.isSearched === false) {
-                    // this.isSearched = true;
-                    // console.log(this.isSearched);
-                    // console.log('basta');
-                    // }
-                    const renderedList = this.contacts.filter(element => element.name.toLowerCase().includes(this.searchKeys.toLowerCase()));
-                    if (this.activeConversation > renderedList.length) {
-                        this.activeConversation = 0;
+        // filteredList() {
+        //     if (this.searchKeys !== '') {
+        //             const renderedList = this.contacts.filter(element => element.name.toLowerCase().includes(this.searchKeys.toLowerCase()));
+        //             if (this.activeConversation > renderedList.length) {
+        //                 this.activeConversation = 0;
+        //             }
+        //             return renderedList;
+        //     } else {
+        //         return this.contacts;
+        //     }
+        // }
+        visibleContacts() {
+                this.contacts.forEach((element, index) => {
+                    if (!element.name.toLowerCase().includes(this.searchKeys.toLowerCase())) {
+                        this.contacts[index].visible = false;
+                    } else {
+                        this.contacts[index].visible = true;
                     }
-                    return renderedList;
-            } else {
-                return this.contacts;
-            }
+                })
         }
     }
 }).mount('#app');

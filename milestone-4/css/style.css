@@ -303,6 +303,10 @@ CLASSI VUEJS
     background-color: #e9ebeb;
 }
 
+.not-visible {
+    display: none;
+}
+
 /*
 --------
 EFFETTI
