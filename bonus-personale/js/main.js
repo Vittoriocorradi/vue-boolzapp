@@ -12,6 +12,8 @@ createApp({
                     name: 'Michele',
                     avatar: '../img/avatar_1.jpg',
                     visible: true,
+                    hours: 17,
+                    minutes: 00,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -34,6 +36,8 @@ createApp({
                     name: 'Fabio',
                     avatar: '../img/avatar_2.jpg',
                     visible: true,
+                    hours: 17,
+                    minutes: 00,
                     messages: [
                         {
                             date: '20/03/2020 16:30:00',
@@ -56,6 +60,8 @@ createApp({
                     name: 'Samuele',
                     avatar: '../img/avatar_3.jpg',
                     visible: true,
+                    hours: 17,
+                    minutes: 00,
                     messages: [
                         {
                             date: '28/03/2020 10:10:40',
@@ -78,6 +84,8 @@ createApp({
                     name: 'Alessandro B.',
                     avatar: '../img/avatar_4.jpg',
                     visible: true,
+                    hours: 17,
+                    minutes: 00,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -95,6 +103,8 @@ createApp({
                     name: 'Alessandro L.',
                     avatar: '../img/avatar_5.jpg',
                     visible: true,
+                    hours: 17,
+                    minutes: 00,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -112,6 +122,8 @@ createApp({
                     name: 'Claudia',
                     avatar: '../img/avatar_6.jpg',
                     visible: true,
+                    hours: 17,
+                    minutes: 00,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -134,6 +146,8 @@ createApp({
                     name: 'Federico',
                     avatar: '../img/avatar_7.jpg',
                     visible: true,
+                    hours: 17,
+                    minutes: 00,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -151,6 +165,8 @@ createApp({
                     name: 'Davide',
                     avatar: '../img/avatar_8.jpg',
                     visible: true,
+                    hours: 17,
+                    minutes: 00,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -233,21 +249,23 @@ createApp({
         newMessage() {
             if (this.newText.trim() !== '') {
                 this.contacts[this.activeConversation].messages.push({
-                    date: '10/01/2020 17:34:00',
+                    date: `10/01/2020 ${this.hoursToString()}:${this.minutesToString()}:00`,
                     message: this.newText,
                     status: 'sent'
                 })
                 this.newText = '';
+                this.timeChange();
                 setTimeout(this.contactReply, 1000)
             }
         },
         // Risposta dell'interlocutore
         contactReply() {
             this.contacts[this.activeConversation].messages.push({
-                date: '10/01/2020 17:35:00',
+                date: `10/01/2020 ${this.hoursToString()}:${this.minutesToString()}:00`,
                 message: this.randomReplies[this.getRndInteger(0, this.randomReplies.length - 1)],
                 status: 'received'
             })
+            this.timeChange();
         },
         // Contatti visibili quando filtrati
         visibleContacts() {
@@ -270,6 +288,34 @@ createApp({
         // Cancella il messaggio
         deleteMessage(index) {
             this.contacts[this.activeConversation].messages.splice(index, 1);
-        }
+        },
+
+        /*
+
+        BONUS PERSONALE
+
+        */
+
+        // Trasformo i minuti e le ore in stringa
+        minutesToString() {
+            let string = this.contacts[this.activeConversation].minutes.toString();
+            return string.padStart(2, '0');
+        },
+        hoursToString() {
+            let string = this.contacts[this.activeConversation].hours.toString();
+            return string.padStart(2, '0');
+        },
+        // Cambio l'ora per ogni messaggio
+        timeChange() {
+            const actualConversation = this.contacts[this.activeConversation];
+            actualConversation.minutes += this.getRndInteger(1, 60);
+                if (actualConversation.minutes >= 60) {
+                    actualConversation.minutes -= 60;
+                    actualConversation.hours++;
+                    if (actualConversation.hours === 24) {
+                        actualConversation.hours = 00;
+                    }
+                }
+        },
     }
 }).mount('#app');
