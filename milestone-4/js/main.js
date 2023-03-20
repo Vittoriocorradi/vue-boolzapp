@@ -203,18 +203,7 @@ createApp({
                 status: 'received'
             })
         },
-        // Lista filtrata dalla barra di ricerca
-        // filteredList() {
-        //     if (this.searchKeys !== '') {
-        //             const renderedList = this.contacts.filter(element => element.name.toLowerCase().includes(this.searchKeys.toLowerCase()));
-        //             if (this.activeConversation > renderedList.length) {
-        //                 this.activeConversation = 0;
-        //             }
-        //             return renderedList;
-        //     } else {
-        //         return this.contacts;
-        //     }
-        // }
+        // Contatti visibili quando filtrati
         visibleContacts() {
                 this.contacts.forEach((element, index) => {
                     if (!element.name.toLowerCase().includes(this.searchKeys.toLowerCase())) {
