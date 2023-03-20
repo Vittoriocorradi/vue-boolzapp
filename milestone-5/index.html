@@ -121,6 +121,7 @@
             <main class="chat flex">
                 <div v-for="(text, index) in contacts[activeConversation].messages" class="msg flex justify-content-between" :class="{received: text.status === 'received', sent: text.status === 'sent'}">
                     <div class="msg-text">{{ text.message }}</div>
+                    <i class="fa-solid fa-chevron-up menu-chevron"></i>
                     <div class="msg-time typo-time">{{ getTime(index) }}</div>
                 </div>
             </main>

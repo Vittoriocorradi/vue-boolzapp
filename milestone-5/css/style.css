@@ -37,6 +37,11 @@ body {
     font-size: .75rem;
 }
 
+.menu-chevron {
+    font-size: .875rem;
+    color: #a3a3a3;
+}
+
 .typo-time {
     color: #c3c5c8;
     font-size: .625rem;
@@ -255,10 +260,20 @@ CONTENITORE CHAT
     width: 41%;
     border-radius: .625rem;
     flex-direction: column;
+    position: relative;
 }
 
 .chat-container .chat .msg .msg-text {
     padding: .5rem .375rem .1875rem;
+}
+
+.chat-container .chat .msg .menu-chevron {
+    position: absolute;
+    top: .625rem;
+    right: .625rem;
+    padding: .0625rem;
+    opacity: 0;
+    transition: opacity 0.3s;
 }
 
 .chat-container .chat .msg .msg-time {
@@ -311,4 +326,14 @@ EFFETTI
 
 input:focus {
     outline: none;
+}
+
+.chat-container .chat .msg:hover .menu-chevron {
+    opacity: 1;
+}
+
+.chat-container .chat .msg .menu-chevron:hover {
+    cursor: pointer;
+    color: #838383;
+    transform: scale(1.1);
 }
