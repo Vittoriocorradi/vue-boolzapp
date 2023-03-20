@@ -338,7 +338,7 @@ CLASSI VUEJS
 */
 
 .selected-contact {
-    background-color: #e9ebeb;
+    background-color: #e9ebeb !important; 
 }
 
 .invert-chevron {
@@ -353,6 +353,11 @@ EFFETTI
 
 input:focus {
     outline: none;
+}
+
+.contacts-container .contacts .contact:hover {
+    background-color: #f6f6f6;
+    cursor: pointer;
 }
 
 .chat-container .chat .msg:hover .menu-chevron {

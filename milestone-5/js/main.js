@@ -169,8 +169,44 @@ createApp({
                         }
                     ],
                 }
+            ],
+            randomReplies: [
+                'Non ci sono più le mezze stagioni',
+                'Ma non mi dire',
+                'No, non penso',
+                'Sì, ottima idea!',
+                'Come no',
+                'Parlando di altro, hai visto il fungo atomico?',
+                "Ehi, quello è Godzilla?",
+                "Smettila di scrivermi",
+                "Io ti aspetto alle venti davanti al cinema",
+                "Per stasera invece sushi o pizza?",
+                "Vabbè, tu ascoltati il nuovo disco di Harry Styles",
+                "Dimmi veloce che tra poco vado a mangiare",
+                "Se vieni stasera, porta il Risiko",
+                "Mi parli con durezza",
+                "Oggi guardando le nuvole ho visto un castello",
+                "Domani andiamo a dare da mangiare alle papere?",
+                "Facciamo una jam session con gli ukulele?",
+                "Ti sparo con una cerbottana",
+                "Però è salito ancora il prezzo della birra",
+                "Finisco di studiare ancora due capitoli",
+                "Il mio colore preferito è il veryperi",
+                "Oggi mi sa che non vado in palestra, non ne ho tanta voglia",
+                "Boh",
+                "Non dirmi quello che devo fare",
+                "Ho deciso che quest'estate andiamo in Brasile",
+                "Comunque mi devi ancora venti euro",
+                "Ma smettila",
+                "Poi passami la ricetta della carbonara",
+                "Forse quest'anno vinciamo lo scudetto",
+                "Dove vanno d'inverno le anatre di Central Park?",
+                "Anche la lotta verso la cima basta a riempire il cuore di un uomo. Bisogna immaginare Sisifo felice.",
+                "C'è del marcio in Danimarca",
+                "La vita è come il tennis, vince chi serve meglio",
+                "Le attività noiose diventano perversamente molto meno noiose se ci si concentra molto su di esse",
+                
             ]
-
         }
     },
     methods: {
@@ -183,6 +219,10 @@ createApp({
             const time = this.contacts[this.activeConversation].messages[index].date.split(' ');
             const hours = time[1].split(':');
             return `${hours[0]}:${hours[1]}`;
+        },
+        // Generatore numeri casuali
+        getRndInteger(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) ) + min;
         },
         // Formatta orario ultimo messaggio
         getLastTime(index) {
@@ -206,7 +246,7 @@ createApp({
         contactReply() {
             this.contacts[this.activeConversation].messages.push({
                 date: '10/01/2020 17:35:00',
-                message: 'Ok!',
+                message: this.randomReplies[this.getRndInteger(0, this.randomReplies.length - 1)],
                 status: 'received'
             })
         },
