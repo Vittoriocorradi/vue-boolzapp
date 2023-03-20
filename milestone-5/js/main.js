@@ -6,6 +6,7 @@ createApp({
             activeConversation: 0,       // Variabile di stato
             newText: '',                 // Nuovo messaggio
             searchKeys: '',              // Testo barra di ricerca contatti
+            menuOpen: false,              // Variabile menù tendina aperto/chiuso
             contacts: [                  // Lista contatti
                 {
                     name: 'Michele',
@@ -212,6 +213,12 @@ createApp({
                         this.contacts[index].visible = true;
                     }
                 })
+        },
+        openMenu() {
+            this.menuOpen = !this.menuOpen;
+        },
+        closeMenu() {
+            this.menuOpen = false;
         }
     }
 }).mount('#app');
