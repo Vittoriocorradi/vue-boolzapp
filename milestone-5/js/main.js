@@ -214,11 +214,17 @@ createApp({
                     }
                 })
         },
+        // Apri/chiudi il menù a tendina con un click
         openMenu() {
             this.menuOpen = !this.menuOpen;
         },
+        // Chiudi il menu a tendina
         closeMenu() {
             this.menuOpen = false;
+        },
+        // Cancella il messaggio
+        deleteMessage(index) {
+            this.contacts[this.activeConversation].messages.splice(index, 1);
         }
     }
 }).mount('#app');

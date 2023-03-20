@@ -120,13 +120,13 @@
             <!-- Chat -->
             <main class="chat flex">
                 <div v-for="(text, index) in contacts[activeConversation].messages" class="msg flex justify-content-between" :class="{received: text.status === 'received', sent: text.status === 'sent'}" @click="closeMenu" @mouseleave="closeMenu">
-                    <div class="msg-top flex justify-content-between align-items-center">
+                    <div class="msg-top flex justify-content-between">
                         <div class="msg-text">{{ text.message }}</div>
                         <div class="menu-chevron" @click.stop="openMenu">
                             <i class="fa-solid fa-chevron-up" :class="{'invert-chevron': menuOpen === true}"></i>
                             <div class="msg-menu" v-show="menuOpen === true">
                                 <div>Message info</div>
-                                <div>Delete message</div>
+                                <div @click="deleteMessage(index)">Delete message</div>
                             </div>
                         </div>
                     </div>
