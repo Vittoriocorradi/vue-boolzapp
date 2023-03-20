@@ -1,0 +1,376 @@
+/*
+--------
+RESET
+--------
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+[v-cloak] {
+    display: none;
+}
+
+/*
+--------
+TYPO
+--------
+*/
+
+body {
+    font-family: 'Lato', sans-serif;}
+
+.contacts-container .alert-notifications i {
+    font-size: 1.25rem;
+}
+
+.alert-notifications a {
+    font-size: .75rem;
+    color: #537b8e;
+}
+
+.small-text {
+    color: #b3b5b8;
+    font-size: .75rem;
+}
+
+.menu-chevron {
+    font-size: .875rem;
+    color: #a3a3a3;
+}
+
+.typo-time {
+    color: #c3c5c8;
+    font-size: .625rem;
+}
+
+header i {
+    color: #b1b1b1;
+    font-size: 1.2em;
+}
+
+.search-bar i {
+    color: #b5b8ba;
+    font-size: .75rem;
+}
+
+.contacts-container .contacts .contact .contact-name {
+    line-height: 1.4em;
+}
+
+.chat-container .contact-info .chat-contact-name {
+    line-height: 1.1em;
+}
+
+footer i {
+    color: #6c7476;
+    font-size: 1.5em;
+}
+
+/*
+--------
+COMMON
+--------
+*/
+
+.flex {
+    display: flex;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.small-img {
+    width: 3.125rem;
+    height: 3.125rem;
+    border-radius: 50%;
+    display: block;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+header img {
+    width: 100%;
+}
+
+header i {
+   padding: .625rem;
+}
+
+/*
+--------
+BODY
+--------
+*/
+
+body {
+    height: 100vh;
+    background: linear-gradient(to bottom,#009688 15%, #8fbfb3 15%, #8fbfb3 15.5%, #dddbd1 15.5%, #d2dbdc);
+    padding: 1.5rem 2.5rem;
+}
+
+.big-container {
+    background-color: #fff;
+    max-width: 100rem;
+    height: 100%;
+    margin: 0 auto;
+}
+
+/*
+--------
+CONTENITORE CONTATTI
+--------
+*/
+
+.contacts-container {
+    width: 35rem;
+    flex-direction: column;
+}
+
+.contacts-container .profile,
+.contacts-container .alert-notifications,
+.contacts-container .search-bar {
+    flex-shrink: 0;
+}
+
+/* Profilo */
+
+.contacts-container .profile {
+    background-color: #eaeaea;
+    border-right: .1250rem solid #e6e6e6;
+    padding: .625rem;
+}
+
+.contacts-container .profile .small-img {
+    margin-right: .3125rem;
+}
+
+/* Allerta notifiche */
+
+.contacts-container .alert-notifications {
+    background-color: #8edafc;
+    padding: .875rem;
+    gap: .625rem;
+}
+
+.contacts-container .alert-notifications i {
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    text-align: center;
+    line-height: 3.125rem;
+    color: #8edafc;
+}
+
+/* Ricerca contatti */
+
+.contacts-container .search-bar-container {
+    background-color: #fafafa;
+    padding: .4375rem;
+}
+
+.contacts-container .search-bar-container .search-bar {
+    width: 100%;
+    background-color: #fff;
+    border: .0625rem solid #f4f4f4;
+}
+
+.contacts-container .search-bar-container .search-bar i {
+    padding: 0 .9375rem;
+}
+
+.contacts-container .search-bar-container .search-bar input {
+    flex-grow: 1;
+    border: none;
+    padding: .6875rem .3125rem .625rem;
+    border-left: .0625rem solid #fafafa;
+}
+
+/* Contatti */
+
+.contacts-container .contacts {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.contacts-container .contacts .contact {
+    padding: .625rem 1.5rem;
+    border-bottom: .0625rem solid #eafaea;
+}
+
+.contacts-container .contacts .contact img {
+    width: 4.0625rem;
+    height: 4.0625rem;
+    border-radius: 50%;
+    display: block;
+    margin-right: 1.125rem;
+}
+
+
+.contacts-container .contacts .contact .contact-last-msg {
+    inline-size: 100%;
+    overflow: hidden;
+    height: 2em;
+}
+
+
+
+/*
+--------
+CONTENITORE CHAT
+--------
+*/
+
+.chat-container {
+    width: 65rem;
+    flex-direction: column;
+}
+
+.chat-container .contact-info,
+.chat-container .new-message {
+    flex-shrink: 0;
+}
+
+/* Info contatto */
+
+.chat-container .contact-info {
+    background-color: #eaeaea;
+    padding: .625rem;
+}
+
+.chat-container .contact-info .small-img {
+    margin-right: .9375rem;
+}
+
+/* Chat */
+
+.chat-container .chat {
+    flex-direction: column;
+    flex-grow: 1;
+    overflow-y: auto;
+    background-image: url(../../img/mine.jpg);
+    padding: 3.4375rem 10%;
+    align-items: start;
+}
+
+.chat-container .chat .msg {
+    padding: .3125rem .3125rem;
+    margin-bottom: .625rem;
+    width: 41%;
+    border-radius: .625rem;
+    flex-direction: column;
+    position: relative;
+}
+
+.chat-container .chat .msg .msg-top {
+    padding: .3125rem 0 .3125rem .3125rem;
+}
+
+.chat-container .chat .msg .msg-text {
+    max-width: 90%;
+}
+
+.chat-container .chat .msg .menu-chevron {
+    position: relative;
+    margin-right: .4375rem;
+    padding-top: .125rem;
+    display: none;
+}
+
+.chat-container .chat .msg .msg-menu {
+    position: absolute;
+    background-color: #fff;
+    top: 1.5625rem;
+    right: 0;
+    z-index: 5;
+    box-shadow: 0 .0625rem .3125rem .125rem #888;
+}
+
+.chat-container .chat .msg .msg-menu > * {
+    padding: .625rem .625rem;
+    white-space: nowrap;
+}
+
+.chat-container .chat .msg .msg-time {
+    align-self: end;
+}
+
+.sent {
+    align-self: end;
+    background-color: #d5f9ba;
+}
+
+.received {
+    background-color: #fff;
+}
+
+/* Nuovo messaggio */
+
+.chat-container .new-message {
+    background-color: #f3eeea;
+    padding: .625rem 0;
+}
+
+.chat-container .new-message i {
+    margin: 0 2.375rem;
+}
+
+.chat-container .new-message input {
+    flex-grow: 1;
+    height: 100%;
+    border: none;
+    border-radius: .3125rem;
+    padding: 1.125rem;
+}
+
+/*
+--------
+CLASSI VUEJS
+--------
+*/
+
+.selected-contact {
+    background-color: #e9ebeb !important; 
+}
+
+.invert-chevron {
+    rotate: 180deg;
+}
+
+/*
+--------
+EFFETTI
+--------
+*/
+
+input:focus {
+    outline: none;
+}
+
+.contacts-container .contacts .contact:hover {
+    background-color: #f6f6f6;
+    cursor: pointer;
+}
+
+.chat-container .chat .msg:hover .menu-chevron {
+    display: block;
+}
+
+.chat-container .chat .msg .menu-chevron:hover {
+    cursor: pointer;
+    color: #838383;
+    /* transform: scale(1.1); */
+}
+
+.chat-container .chat .msg .msg-menu > *:hover {
+    background-color: #009688;
+    color: #fff;
+}

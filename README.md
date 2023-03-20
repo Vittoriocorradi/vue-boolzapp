@@ -30,3 +30,7 @@ Scrivendo nella barra di ricerca dei contatti, se ci sono contatti che combacian
 
 Portando il mouse su un messaggio in chat, apparirà una chevron. Al click sulla chevron, comparirà un menù a tendina. Tra le opzioni del menù, ci sarà l'opzione di cliccare su un testo e cancellare il messaggio in questione. Spostando il mouse dalla tendina, il menù scomparirà.
 Nella lista dei contatti verranno visualizzati l'ultimo messaggio inviato/ricevuto e il suo orario.
+
+# Bonus
+
+Scrivendo dei nuovi messaggi, il primo avrà orario 17:00. I messaggi successivi avranno un orario aumentato tra gli 1 e i 60 minuti rispetto al messaggio precedente. La data non viene presa in considerazione.
