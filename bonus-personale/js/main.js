@@ -255,6 +255,9 @@ createApp({
                 })
                 this.newText = '';
                 this.timeChange();
+                this.contacts.splice(0, 0, this.contacts[this.activeConversation]);
+                this.contacts.splice(this.activeConversation + 1, 1);
+                this.activeConversation = 0;
                 setTimeout(this.contactReply, 1000)
             }
         },
