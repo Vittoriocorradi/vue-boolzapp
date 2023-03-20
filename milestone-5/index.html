@@ -77,13 +77,13 @@
                             <div>
                                 {{ contact.name }}
                             </div>
-                            <div class="small-text">
-                                Ultimo messaggio inviato
+                            <div class="small-text contact-last-msg">
+                                {{ contacts[index].messages[contacts[index].messages.length - 1].message }}
                             </div>
                         </div>
                     </div>
                     <div class="time typo-time">
-                        12:00
+                        {{ getLastTime(index) }}
                     </div>
                 </li>
             </ul>

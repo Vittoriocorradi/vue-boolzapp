@@ -215,6 +215,13 @@ CONTENITORE CONTATTI
 }
 
 
+.contacts-container .contacts .contact .contact-last-msg {
+    inline-size: 100%;
+    overflow: hidden;
+    height: 2em;
+}
+
+
 
 /*
 --------

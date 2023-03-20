@@ -184,6 +184,12 @@ createApp({
             const hours = time[1].split(':');
             return `${hours[0]}:${hours[1]}`;
         },
+        // Formatta orario ultimo messaggio
+        getLastTime(index) {
+            const time = this.contacts[index].messages[this.contacts[index].messages.length - 1].date.split(' ');
+            const hours = time[1].split(':');
+            return `${hours[0]}:${hours[1]}`;
+        },
         // Nuovo messaggio
         newMessage() {
             if (this.newText.trim() !== '') {
