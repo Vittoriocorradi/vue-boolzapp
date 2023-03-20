@@ -34,3 +34,5 @@ Nella lista dei contatti verranno visualizzati l'ultimo messaggio inviato/ricevu
 # Bonus
 
 Scrivendo dei nuovi messaggi, il primo avrà orario 17:00. I messaggi successivi avranno un orario aumentato tra gli 1 e i 60 minuti rispetto al messaggio precedente. La data non viene presa in considerazione.
+Il contatto a cui si è mandato l'ultimo messaggio/da cui si è ricevuto l'ultimo messaggio si sposta in cima alla lista dei contatti (orario non preso in considerazione).
+Quando ci sono abbastanza messaggi perché compaia la scrollbar, ad ogni nuovo messaggio ci sarà uno scroll automatico verso il fondo della chat.

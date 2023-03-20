@@ -118,7 +118,7 @@
             </header>
             <!-- /Info contatto -->
             <!-- Chat -->
-            <main class="chat flex">
+            <main class="chat flex" ref="chatWindow">
                 <div v-for="(text, index) in contacts[activeConversation].messages" class="msg flex justify-content-between" :class="{received: text.status === 'received', sent: text.status === 'sent'}" @click="closeMenu" @mouseleave="closeMenu">
                     <div class="msg-top flex justify-content-between">
                         <div class="msg-text">{{ text.message }}</div>

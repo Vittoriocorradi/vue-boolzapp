@@ -259,6 +259,9 @@ createApp({
                 this.contacts.splice(this.activeConversation + 1, 1);
                 this.activeConversation = 0;
                 setTimeout(this.contactReply, 1000)
+                this.$nextTick(() => {
+                    this.$refs.chatWindow.scrollTop = this.$refs.chatWindow.scrollHeight
+                })
             }
         },
         // Risposta dell'interlocutore
@@ -269,6 +272,9 @@ createApp({
                 status: 'received'
             })
             this.timeChange();
+            this.$nextTick(() => {
+                this.$refs.chatWindow.scrollTop = this.$refs.chatWindow.scrollHeight
+            })
         },
         // Contatti visibili quando filtrati
         visibleContacts() {
